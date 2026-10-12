@@ -17,6 +17,4 @@ Implemented architecture; no measured tool-switch count or MTTR reduction suppli
 
 Full case study and architecture: https://srinivas-surfer.github.io/Project-sre/projects/observability-command-center/case-study.html
 
-Client identities and operational data are omitted. No measured reduction figures are claimed beyond the supplied resume.
-
 #SiteReliabilityEngineering #DevOps #Observability

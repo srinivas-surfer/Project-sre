@@ -17,6 +17,4 @@ Directly supported by the rule-validation implementation.
 
 Full case study and architecture: https://srinivas-surfer.github.io/Project-sre/projects/ticket-label-manager/case-study.html
 
-Client identities and operational data are omitted. No measured reduction figures are claimed beyond the supplied resume.
-
 #SiteReliabilityEngineering #DevOps #Observability

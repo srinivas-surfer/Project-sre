@@ -17,6 +17,4 @@ Implemented automation; no measured engineering-hours saving supplied.
 
 Full case study and architecture: https://srinivas-surfer.github.io/Project-sre/projects/application-metrics/case-study.html
 
-Client identities and operational data are omitted. No measured reduction figures are claimed beyond the supplied resume.
-
 #SiteReliabilityEngineering #DevOps #Observability

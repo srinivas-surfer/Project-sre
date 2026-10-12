@@ -17,6 +17,4 @@ Resume-level outcome; not a quantified result attributed solely to this test man
 
 Full case study and architecture: https://srinivas-surfer.github.io/Project-sre/projects/browser-automation/case-study.html
 
-Client identities and operational data are omitted. No measured reduction figures are claimed beyond the supplied resume.
-
 #SiteReliabilityEngineering #DevOps #Observability

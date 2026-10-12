@@ -17,6 +17,4 @@ Implemented automation; elapsed preparation time was not supplied.
 
 Full case study and architecture: https://srinivas-surfer.github.io/Project-sre/projects/service-performance-reporting/case-study.html
 
-Client identities and operational data are omitted. No measured reduction figures are claimed beyond the supplied resume.
-
 #SiteReliabilityEngineering #DevOps #Observability
