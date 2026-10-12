@@ -1,0 +1,7 @@
+Application Metrics Explorer
+
+A last-value card alone can hide a growing trend or a brief spike. Different measurement types also require different aggregation rules.
+
+Show the chart, last value, peak, and a clearly defined window average together; use request-weighted error rates.
+
+The browser uses deterministic synthetic interval measurements. CPU and memory are gauge samples; error rate is errors divided by requests. This is not a live collector or a capacity recommendation.

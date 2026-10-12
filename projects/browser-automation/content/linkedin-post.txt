@@ -1,13 +1,19 @@
-DRAFT — publish after the public demonstration is complete.
+DRAFT — insert the verified deployment URL before posting.
 
-Browser Automation
+I built a public Browser Automation Showcase demonstration to explore a practical engineering question.
 
-A showcase for browser-driven testing and repeatable user journey validation.
+A passing page-load check does not establish that a user can complete a journey.
 
-I am preparing an independent public demonstration to explore browser testing, journey validation, test reporting.
+The demo includes:
+- Functional sample cart
+- Quantity and shipping controls
+- Checkout validation
+- Four browser smoke checks
 
-Use a purpose-built sample application to demonstrate repeatable checks and failure evidence.
+Test meaningful transitions: add an item, change quantity, enforce checkout prerequisites, and confirm a fictional order.
 
-The public version will use fictional examples and synthetic data.
+All data and examples are fictional; no client systems or records are used.
 
-#SiteReliabilityEngineering #Observability #DevOps
+Try it: [VERIFIED URL]
+
+#SiteReliabilityEngineering #DevOps #Observability

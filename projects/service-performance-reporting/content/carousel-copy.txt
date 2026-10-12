@@ -1,6 +1,15 @@
-1. Service Performance Reporting
-2. The idea: A reporting concept that brings request volume, latency, and error rates into one readable view.
-3. Focus: Traffic trends
-4. Focus: Latency percentiles
-5. Public demonstration: Build sample reports from synthetic telemetry and explain how each metric supports investigation.
-6. Follow the build: github.com/srinivas-surfer
+1. THE PROJECT
+Service Performance Reporting
+A public browser demonstration
+
+2. THE QUESTION
+Service reports
+A dashboard becomes misleading when its charts silently use different populations or time windows.
+
+3. THE APPROACH
+Make the decision visible.
+Calculate every card and endpoint row from the same filtered record set, with metric definitions visible.
+
+4. TRY IT
+Explore the working demo.
+Compare web and mobile requests over one hour and six hours. Identify the endpoint contributing the most server errors.

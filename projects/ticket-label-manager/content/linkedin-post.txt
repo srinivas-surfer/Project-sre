@@ -1,13 +1,19 @@
-DRAFT — publish after the public demonstration is complete.
+DRAFT — insert the verified deployment URL before posting.
 
-Ticket Label Manager
+I built a public Ticket Label Manager demonstration to explore a practical engineering question.
 
-A concept for validating ticket labels with conditional rules and clear review states.
+Tickets can be inconsistent when required labels depend on the type of work or its current status.
 
-I am preparing an independent public demonstration to explore conditional validation, bulk editing, quality review.
+The demo includes:
+- Conditional incident and problem rules
+- Closure labels for resolved tickets
+- Editable ticket classifications
+- Selected-ticket bulk repair
 
-Demonstrate label rules against fictional tickets without connecting to a live ticketing system.
+Make requirements explicit and recompute validation after each edit. Bulk repair applies only to selected tickets.
 
-The public version will use fictional examples and synthetic data.
+All data and examples are fictional; no client systems or records are used.
 
-#SiteReliabilityEngineering #Observability #DevOps
+Try it: [VERIFIED URL]
+
+#SiteReliabilityEngineering #DevOps #Observability

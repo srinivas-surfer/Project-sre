@@ -1,0 +1,7 @@
+Ticket Label Manager
+
+Tickets can be inconsistent when required labels depend on the type of work or its current status.
+
+Make requirements explicit and recompute validation after each edit. Bulk repair applies only to selected tickets.
+
+This is an in-memory browser demonstration. It does not connect to Jira, identify actual reporters, modify real tickets, or persist changes after reload.

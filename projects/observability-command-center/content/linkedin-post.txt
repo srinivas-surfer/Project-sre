@@ -1,13 +1,19 @@
-DRAFT — publish after the public demonstration is complete.
+DRAFT — insert the verified deployment URL before posting.
 
-Observability Command Center
+I built a public Observability Command Center demonstration to explore a practical engineering question.
 
-An exploration of unified monitoring, anomaly detection, and cross-tool investigation.
+Operators need a concise way to relate user symptoms to dependency changes without confusing coincidence with causation.
 
-I am preparing an independent public demonstration to explore monitoring workflows, anomaly detection, signal correlation.
+The demo includes:
+- Normal, dependency, and recovery scenarios
+- Per-service signal cards
+- Event filtering and inspection
+- Explicit correlation limitations
 
-Present an original, simplified architecture with fictional services and no operational integrations.
+Show timestamps, affected services, and a hypothesis together while making the evidence limits explicit.
 
-The public version will use fictional examples and synthetic data.
+All data and examples are fictional; no client systems or records are used.
 
-#SiteReliabilityEngineering #Observability #DevOps
+Try it: [VERIFIED URL]
+
+#SiteReliabilityEngineering #DevOps #Observability

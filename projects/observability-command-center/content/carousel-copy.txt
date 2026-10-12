@@ -1,6 +1,15 @@
-1. Observability Command Center
-2. The idea: An exploration of unified monitoring, anomaly detection, and cross-tool investigation.
-3. Focus: Monitoring workflows
-4. Focus: Anomaly detection
-5. Public demonstration: Present an original, simplified architecture with fictional services and no operational integrations.
-6. Follow the build: github.com/srinivas-surfer
+1. THE PROJECT
+Observability Command Center
+A public browser demonstration
+
+2. THE QUESTION
+Signal workspace
+Operators need a concise way to relate user symptoms to dependency changes without confusing coincidence with causation.
+
+3. THE APPROACH
+Make the decision visible.
+Show timestamps, affected services, and a hypothesis together while making the evidence limits explicit.
+
+4. TRY IT
+Explore the working demo.
+Switch to dependency slowdown, filter to checkout, and inspect the shared database signal. Then compare the recovery scenario.

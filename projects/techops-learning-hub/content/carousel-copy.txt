@@ -1,6 +1,0 @@
-1. TechOps Learning Hub
-2. The idea: A structured reference for SRE, observability, Kubernetes, cloud infrastructure, and delivery practices.
-3. Focus: Reliability fundamentals
-4. Focus: Cloud architecture
-5. Public demonstration: Organize operational concepts into focused learning paths with practical, independently written examples.
-6. Follow the build: github.com/srinivas-surfer

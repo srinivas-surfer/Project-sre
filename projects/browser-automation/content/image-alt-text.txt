@@ -1,0 +1,4 @@
+Slide 1: THE PROJECT. Browser Automation Showcase A public browser demonstration
+Slide 2: THE QUESTION. Journey checks A passing page-load check does not establish that a user can complete a journey.
+Slide 3: THE APPROACH. Make the decision visible. Test meaningful transitions: add an item, change quantity, enforce checkout prerequisites, and confirm a fictional order.
+Slide 4: TRY IT. Explore the working demo. Run the checks, then manually add products and choose shipping. Confirm that checkout requires the demo agreement.

@@ -1,0 +1,4 @@
+Slide 1: THE PROJECT. Service Performance Reporting A public browser demonstration
+Slide 2: THE QUESTION. Service reports A dashboard becomes misleading when its charts silently use different populations or time windows.
+Slide 3: THE APPROACH. Make the decision visible. Calculate every card and endpoint row from the same filtered record set, with metric definitions visible.
+Slide 4: TRY IT. Explore the working demo. Compare web and mobile requests over one hour and six hours. Identify the endpoint contributing the most server errors.

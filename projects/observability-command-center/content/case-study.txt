@@ -1,0 +1,7 @@
+Observability Command Center
+
+Operators need a concise way to relate user symptoms to dependency changes without confusing coincidence with causation.
+
+Show timestamps, affected services, and a hypothesis together while making the evidence limits explicit.
+
+Signals and timelines are scripted teaching examples, not live telemetry. Correlation is an illustrative hypothesis, not an automated root-cause finding. No operational actions are available.

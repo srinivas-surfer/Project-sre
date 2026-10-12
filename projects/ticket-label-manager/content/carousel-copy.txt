@@ -1,6 +1,15 @@
-1. Ticket Label Manager
-2. The idea: A concept for validating ticket labels with conditional rules and clear review states.
-3. Focus: Conditional validation
-4. Focus: Bulk editing
-5. Public demonstration: Demonstrate label rules against fictional tickets without connecting to a live ticketing system.
-6. Follow the build: github.com/srinivas-surfer
+1. THE PROJECT
+Ticket Label Manager
+A public browser demonstration
+
+2. THE QUESTION
+Ticket quality
+Tickets can be inconsistent when required labels depend on the type of work or its current status.
+
+3. THE APPROACH
+Make the decision visible.
+Make requirements explicit and recompute validation after each edit. Bulk repair applies only to selected tickets.
+
+4. TRY IT
+Explore the working demo.
+Select two incomplete tickets and repair them. Change a ticket from incident to problem and inspect the new required category.

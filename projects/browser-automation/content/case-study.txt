@@ -1,0 +1,7 @@
+Browser Automation Showcase
+
+A passing page-load check does not establish that a user can complete a journey.
+
+Test meaningful transitions: add an item, change quantity, enforce checkout prerequisites, and confirm a fictional order.
+
+The on-page runner uses browser JavaScript and DOM assertions; it is not a hosted Playwright service. It places no orders, processes no payments, and makes no remote requests. A separate Playwright test file is included for local automation.

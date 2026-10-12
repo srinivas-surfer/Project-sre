@@ -1,13 +1,19 @@
-DRAFT — publish after the public demonstration is complete.
+DRAFT — insert the verified deployment URL before posting.
 
-Order Anomaly Detection
+I built a public Order Anomaly Detection demonstration to explore a practical engineering question.
 
-A showcase of statistical baselines and ensemble approaches to detecting unusual order volumes.
+Order counts naturally vary. A useful signal must explain why a change deserves investigation without treating every fluctuation as a failure.
 
-I am preparing an independent public demonstration to explore statistical baselines, anomaly scoring, reporting.
+The demo includes:
+- Three synthetic traffic scenarios
+- Adjustable Z-score threshold
+- Hourly chart and alert table
+- CSV export of the current analysis
 
-Explain detection methods using generated order data and clearly distinguish anomalies from confirmed incidents.
+Expose the baseline, standard deviation, and threshold alongside the result so visitors can understand every decision.
 
-The public version will use fictional examples and synthetic data.
+All data and examples are fictional; no client systems or records are used.
 
-#SiteReliabilityEngineering #Observability #DevOps
+Try it: [VERIFIED URL]
+
+#SiteReliabilityEngineering #DevOps #Observability

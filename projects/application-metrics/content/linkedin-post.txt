@@ -1,13 +1,19 @@
-DRAFT — publish after the public demonstration is complete.
+DRAFT — insert the verified deployment URL before posting.
 
-Application Metrics
+I built a public Application Metrics Explorer demonstration to explore a practical engineering question.
 
-A concept for collecting application metrics and presenting useful operational summaries.
+A last-value card alone can hide a growing trend or a brief spike. Different measurement types also require different aggregation rules.
 
-I am preparing an independent public demonstration to explore metric collection, health summaries, trend analysis.
+The demo includes:
+- Three fictional services
+- CPU, memory, and error-rate views
+- Adjustable threshold
+- Sample table and CSV export
 
-Use synthetic metrics to explain collection, aggregation, and interpretation.
+Show the chart, last value, peak, and a clearly defined window average together; use request-weighted error rates.
 
-The public version will use fictional examples and synthetic data.
+All data and examples are fictional; no client systems or records are used.
 
-#SiteReliabilityEngineering #Observability #DevOps
+Try it: [VERIFIED URL]
+
+#SiteReliabilityEngineering #DevOps #Observability

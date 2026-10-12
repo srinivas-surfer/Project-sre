@@ -1,0 +1,4 @@
+Slide 1: THE PROJECT. Application Metrics Explorer A public browser demonstration
+Slide 2: THE QUESTION. Metric explorer A last-value card alone can hide a growing trend or a brief spike. Different measurement types also require different aggregation rules.
+Slide 3: THE APPROACH. Make the decision visible. Show the chart, last value, peak, and a clearly defined window average together; use request-weighted error rates.
+Slide 4: TRY IT. Explore the working demo. Compare the worker and API services. Adjust the CPU threshold and inspect the count of samples above it.

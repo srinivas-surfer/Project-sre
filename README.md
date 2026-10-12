@@ -1,32 +1,38 @@
 # Srinivas Pitchubabu — SRE portfolio
 
-Static portfolio prepared for https://srinivas-surfer.github.io/Project-sre/.
+Portfolio, public resume, and six independently authored browser demonstrations.
 
-## Local preview
+## Hosting
 
-Run `python3 -m http.server 8000` in this directory and open http://localhost:8000.
+Uses the existing `srinivas-surfer/Project-sre` repository. GitHub Pages was configured to publish from the `main` branch root; the successful built-in Pages run confirmed that configuration. The redundant custom deployment workflow was removed to avoid competing deployments. Keep Settings → Pages → Deploy from a branch → main → /(root).
 
-## Publish with GitHub Desktop
+Expected public URL: https://srinivas-surfer.github.io/Project-sre/.
 
-Review the changes, commit on main, and push origin. On GitHub, select Settings → Pages → Source → GitHub Actions. The included workflow publishes the website. Hosting is not verified until the deployment succeeds.
+## Projects
 
-## Delivery sequence
+- Order Anomaly Detection: synthetic hourly counts and transparent Z-score thresholds.
+- Ticket Label Manager: fictional ticket rules, editing, and bulk repair.
+- Service Performance Reporting: generated request records, channel filters, P90, and export.
+- Browser Automation Showcase: fictional storefront, DOM smoke checks, and a local Playwright example.
+- Observability Command Center: scripted incidents, service filters, and evidence inspection.
+- Application Metrics Explorer: synthetic gauges, request-weighted error rates, and export.
 
-1. Portfolio foundation and public resume (prepared).
-2. TechOps: independent public edition built in sibling `../techops-learning-hub`; 26 topics and LinkedIn assets prepared. Publish the separate repository and verify hosting before adding a live link.
-3. Order anomaly detection with synthetic data.
-4. Ticket label manager with fictional tickets.
-5. Service performance reporting with synthetic telemetry.
-6. Browser automation against a sample application.
-7. Observability command center with fictional services.
-8. Application metrics with generated data.
+Each project has Overview, Demo, Architecture, and Case Study pages under `projects/<slug>/`. The standalone sibling folders outside this repository are independently publishable local Git repositories. They are not yet separate repositories on GitHub; this portfolio embeds their public site files so every demo works under the existing hosting address.
 
-Each standalone project requires its own repository; the project pages here are portfolio summaries, not replacements for those repositories. Review the infrastructure assessment's provenance and license before considering inclusion. VisionOps and the Python exercise need further assessment.
+TechOps is excluded from this portfolio at the owner's request; its existing separate local folder is retained. Infrastructure assessment material is not included.
 
-## Assets and content
+## Preview
 
-Each project has `images/cover.svg`, `content/linkedin-post.txt`, and `content/carousel-copy.txt`. Covers are original editable vector assets. Post drafts accurately describe work in preparation and need updating when demonstrations are completed. Content drafts stay in GitHub but are excluded from the Pages artifact.
+Open `index.html`, or run `python3 -m http.server 8000` in this directory. The static sites require no dependencies.
+
+## Content and assets
+
+Each project contains `images/linkedin/` with four original SVG cards and PNG exports, plus `content/` with case-study text, carousel copy, image alt text, and a LinkedIn draft. Drafts require the verified live URL before posting. Nothing is posted to LinkedIn automatically. All committed files are public and may be served by branch-based Pages hosting.
 
 ## Public content boundary
 
-Files were newly authored for this portfolio. No original project code, datasets, raw resume PDF, credentials, production screenshots, or old Git history were copied. Public descriptions discuss general engineering concepts. A full audit of the original projects is still required before any standalone release. No client impact metrics are claimed.
+All demo code, input data, illustrations and exercises were newly authored. No original operational source, client identifiers, credentials, production exports, screenshots, raw resume PDF, or private Git histories were imported. Demo limitations are explicitly described on each project page. No client performance or impact figures are claimed.
+
+## Validation
+
+All six interaction flows were checked in a real headless browser, including thresholds, CSV downloads, selected-ticket repairs, report aggregation, cart checkout, scenario inspection, and metric weighting. All 24 project pages were checked at a mobile viewport. Local links and the deployment package are validated before publication.

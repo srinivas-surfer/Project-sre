@@ -1,0 +1,7 @@
+Order Anomaly Detection
+
+Order counts naturally vary. A useful signal must explain why a change deserves investigation without treating every fluctuation as a failure.
+
+Expose the baseline, standard deviation, and threshold alongside the result so visitors can understand every decision.
+
+This demonstration uses a fixed, hand-authored baseline and a Z-score rule. It does not run the private project’s ML ensemble, learn a seasonal baseline, or send alerts. A flagged point is a review candidate, not proof of an incident.

@@ -1,0 +1,7 @@
+Service Performance Reporting
+
+A dashboard becomes misleading when its charts silently use different populations or time windows.
+
+Calculate every card and endpoint row from the same filtered record set, with metric definitions visible.
+
+No OpenSearch or production logs are queried. Every value comes from generated records. Percentiles use the nearest-rank definition, and all records have an HTTP status.

@@ -1,13 +1,19 @@
-DRAFT — publish after the public demonstration is complete.
+DRAFT — insert the verified deployment URL before posting.
 
-Service Performance Reporting
+I built a public Service Performance Reporting demonstration to explore a practical engineering question.
 
-A reporting concept that brings request volume, latency, and error rates into one readable view.
+A dashboard becomes misleading when its charts silently use different populations or time windows.
 
-I am preparing an independent public demonstration to explore traffic trends, latency percentiles, error analysis.
+The demo includes:
+- Web and mobile filters
+- Selectable time windows
+- Nearest-rank P90 latency
+- Endpoint breakdown and CSV export
 
-Build sample reports from synthetic telemetry and explain how each metric supports investigation.
+Calculate every card and endpoint row from the same filtered record set, with metric definitions visible.
 
-The public version will use fictional examples and synthetic data.
+All data and examples are fictional; no client systems or records are used.
 
-#SiteReliabilityEngineering #Observability #DevOps
+Try it: [VERIFIED URL]
+
+#SiteReliabilityEngineering #DevOps #Observability
