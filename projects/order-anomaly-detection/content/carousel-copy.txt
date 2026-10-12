@@ -1,0 +1,6 @@
+1. Order Anomaly Detection
+2. The idea: A showcase of statistical baselines and ensemble approaches to detecting unusual order volumes.
+3. Focus: Statistical baselines
+4. Focus: Anomaly scoring
+5. Public demonstration: Explain detection methods using generated order data and clearly distinguish anomalies from confirmed incidents.
+6. Follow the build: github.com/srinivas-surfer

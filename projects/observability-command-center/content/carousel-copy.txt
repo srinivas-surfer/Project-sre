@@ -1,0 +1,6 @@
+1. Observability Command Center
+2. The idea: An exploration of unified monitoring, anomaly detection, and cross-tool investigation.
+3. Focus: Monitoring workflows
+4. Focus: Anomaly detection
+5. Public demonstration: Present an original, simplified architecture with fictional services and no operational integrations.
+6. Follow the build: github.com/srinivas-surfer

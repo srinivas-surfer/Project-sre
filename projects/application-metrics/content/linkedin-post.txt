@@ -1,0 +1,13 @@
+DRAFT — publish after the public demonstration is complete.
+
+Application Metrics
+
+A concept for collecting application metrics and presenting useful operational summaries.
+
+I am preparing an independent public demonstration to explore metric collection, health summaries, trend analysis.
+
+Use synthetic metrics to explain collection, aggregation, and interpretation.
+
+The public version will use fictional examples and synthetic data.
+
+#SiteReliabilityEngineering #Observability #DevOps

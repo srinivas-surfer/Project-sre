@@ -1,0 +1,13 @@
+DRAFT — publish after the public demonstration is complete.
+
+Observability Command Center
+
+An exploration of unified monitoring, anomaly detection, and cross-tool investigation.
+
+I am preparing an independent public demonstration to explore monitoring workflows, anomaly detection, signal correlation.
+
+Present an original, simplified architecture with fictional services and no operational integrations.
+
+The public version will use fictional examples and synthetic data.
+
+#SiteReliabilityEngineering #Observability #DevOps

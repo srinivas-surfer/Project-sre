@@ -1,0 +1,13 @@
+DRAFT — publish after the public demonstration is complete.
+
+Ticket Label Manager
+
+A concept for validating ticket labels with conditional rules and clear review states.
+
+I am preparing an independent public demonstration to explore conditional validation, bulk editing, quality review.
+
+Demonstrate label rules against fictional tickets without connecting to a live ticketing system.
+
+The public version will use fictional examples and synthetic data.
+
+#SiteReliabilityEngineering #Observability #DevOps

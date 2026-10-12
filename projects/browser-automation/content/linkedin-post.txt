@@ -1,0 +1,13 @@
+DRAFT — publish after the public demonstration is complete.
+
+Browser Automation
+
+A showcase for browser-driven testing and repeatable user journey validation.
+
+I am preparing an independent public demonstration to explore browser testing, journey validation, test reporting.
+
+Use a purpose-built sample application to demonstrate repeatable checks and failure evidence.
+
+The public version will use fictional examples and synthetic data.
+
+#SiteReliabilityEngineering #Observability #DevOps

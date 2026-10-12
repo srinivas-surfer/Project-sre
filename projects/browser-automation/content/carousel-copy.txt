@@ -1,0 +1,6 @@
+1. Browser Automation
+2. The idea: A showcase for browser-driven testing and repeatable user journey validation.
+3. Focus: Browser testing
+4. Focus: Journey validation
+5. Public demonstration: Use a purpose-built sample application to demonstrate repeatable checks and failure evidence.
+6. Follow the build: github.com/srinivas-surfer

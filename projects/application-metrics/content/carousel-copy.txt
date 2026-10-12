@@ -1,0 +1,6 @@
+1. Application Metrics
+2. The idea: A concept for collecting application metrics and presenting useful operational summaries.
+3. Focus: Metric collection
+4. Focus: Health summaries
+5. Public demonstration: Use synthetic metrics to explain collection, aggregation, and interpretation.
+6. Follow the build: github.com/srinivas-surfer

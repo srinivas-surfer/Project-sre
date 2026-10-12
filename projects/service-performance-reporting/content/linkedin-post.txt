@@ -1,0 +1,13 @@
+DRAFT — publish after the public demonstration is complete.
+
+Service Performance Reporting
+
+A reporting concept that brings request volume, latency, and error rates into one readable view.
+
+I am preparing an independent public demonstration to explore traffic trends, latency percentiles, error analysis.
+
+Build sample reports from synthetic telemetry and explain how each metric supports investigation.
+
+The public version will use fictional examples and synthetic data.
+
+#SiteReliabilityEngineering #Observability #DevOps

@@ -1,0 +1,6 @@
+1. Service Performance Reporting
+2. The idea: A reporting concept that brings request volume, latency, and error rates into one readable view.
+3. Focus: Traffic trends
+4. Focus: Latency percentiles
+5. Public demonstration: Build sample reports from synthetic telemetry and explain how each metric supports investigation.
+6. Follow the build: github.com/srinivas-surfer

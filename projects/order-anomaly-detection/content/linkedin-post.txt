@@ -1,0 +1,13 @@
+DRAFT — publish after the public demonstration is complete.
+
+Order Anomaly Detection
+
+A showcase of statistical baselines and ensemble approaches to detecting unusual order volumes.
+
+I am preparing an independent public demonstration to explore statistical baselines, anomaly scoring, reporting.
+
+Explain detection methods using generated order data and clearly distinguish anomalies from confirmed incidents.
+
+The public version will use fictional examples and synthetic data.
+
+#SiteReliabilityEngineering #Observability #DevOps

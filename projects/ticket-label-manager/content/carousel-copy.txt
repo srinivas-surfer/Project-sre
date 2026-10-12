@@ -1,0 +1,6 @@
+1. Ticket Label Manager
+2. The idea: A concept for validating ticket labels with conditional rules and clear review states.
+3. Focus: Conditional validation
+4. Focus: Bulk editing
+5. Public demonstration: Demonstrate label rules against fictional tickets without connecting to a live ticketing system.
+6. Follow the build: github.com/srinivas-surfer
