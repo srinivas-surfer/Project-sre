@@ -1,19 +1,22 @@
-DRAFT — insert the verified deployment URL before posting.
+DRAFT — review before posting.
 
-I built a public Observability Command Center demonstration to explore a practical engineering question.
+Observability Command Center
 
-Operators need a concise way to relate user symptoms to dependency changes without confusing coincidence with causation.
+The command center addresses two connected problems: fragmented operational context and the reliability of the collection workflow itself. A dashboard is less useful if its collectors block each other, duplicate work, or fail without making the failure visible.
 
-The demo includes:
-- Normal, dependency, and recovery scenarios
-- Per-service signal cards
-- Event filtering and inspection
-- Explicit correlation limitations
+The implementation:
+• Register and select the environment
+• Schedule bounded collection cycles
+• Claim and execute jobs
+• Evaluate and persist monitoring evidence
+• Correlate and inspect
 
-Show timestamps, affected services, and a hypothesis together while making the evidence limits explicit.
+What changed:
+A shared control plane and UI connect collection state, service observations, baselines, and correlation evidence.
+Implemented architecture; no measured tool-switch count or MTTR reduction supplied.
 
-All data and examples are fictional; no client systems or records are used.
+Full case study and architecture: https://srinivas-surfer.github.io/Project-sre/projects/observability-command-center/case-study.html
 
-Try it: [VERIFIED URL]
+Client identities and operational data are omitted. No measured reduction figures are claimed beyond the supplied resume.
 
 #SiteReliabilityEngineering #DevOps #Observability

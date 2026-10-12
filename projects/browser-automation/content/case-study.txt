@@ -1,7 +1,73 @@
-Browser Automation Showcase
+Browser Test Management
 
-A passing page-load check does not establish that a user can complete a journey.
+WHY IT STARTED
 
-Test meaningful transitions: add an item, change quantity, enforce checkout prerequisites, and confirm a fictional order.
+Infrastructure checks can tell an operator that a service is available without showing whether a user can complete a multi-step journey. Repeating a browser journey by hand also creates a consistency problem: the steps and the evidence can differ between runs.
 
-The on-page runner uses browser JavaScript and DOM assertions; it is not a hosted Playwright service. It places no orders, processes no payments, and makes no remote requests. A separate Playwright test file is included for local automation.
+This project addresses the workflow around those checks. Engineers need a place to manage test definitions, record or upload steps, run the checks, and find the resulting report instead of relying on disconnected scripts and manually collected screenshots.
+
+I implemented a browser-based manager around Playwright. The aim was to turn recurring validation work into named, repeatable test runs with stored configuration and visible outcomes. The resume supports the broader reduction in manual triage effort; the source supports the architecture and implemented routes described here.
+
+WHAT CHANGED
+
+A recurring browser check requires an engineer to repeat the journey, track what was tested, and retain the result. Script execution and report discovery can remain separate tasks even after the first test is automated.
+
+The application provides authenticated routes for test configuration, recording/upload, individual or batch execution, run history, and report access, backed by a local SQLite database and filesystem artifacts.
+
+IMPLEMENTATION DECISIONS
+
+Manage the lifecycle around a test
+A test file alone does not capture who created it, which target/configuration it uses, or what happened on the latest run. The database models separate users, credentials, test configuration, and run records.
+
+Reuse a browser automation engine
+The execution service launches the Playwright test runner as a child process and requests HTML/list reporting. The application coordinates the run instead of reimplementing browser automation.
+
+Keep browser interaction and execution separate
+Recording and execution are separate service modules. The recording path prepares a test file and process lifecycle; the execution path runs a stored test and records status.
+
+Expose progress and history
+HTTP status/history routes and WebSocket notifications provide a way for the UI to observe activity. These are management conveniences, not evidence of production-grade orchestration or isolation.
+
+HOW IT WORKS
+
+Authenticate and choose a test workflow
+The Express application handles login and authenticated routes. The user can manage a test configuration, upload a test, or request a recording.
+
+Prepare the test definition
+The recording service creates configuration metadata and launches a Playwright code-generation process. Uploaded/generated definitions are stored as test specification files.
+
+Start an execution record
+The execution service looks up the configuration, creates a run entry, prepares the run environment, and invokes the Playwright test command.
+
+Run the actual browser automation
+The child process executes the selected specification. Process output, completion, and errors are used to update the run result; batch execution iterates through selected tests.
+
+Make the outcome reviewable
+Run metadata is retained in SQLite. The application exposes status/history and an HTML report path, with WebSocket events for parts of the recording and execution lifecycle.
+
+OUTCOMES
+
+Reduced manual triage effort in the wider SRE work
+The resume explicitly links synthetic monitoring and consolidated observability with less manual work and more efficient incident triage.
+Resume-level outcome; not a quantified result attributed solely to this test manager.
+
+Repeatable browser validation workflow
+Stored specifications and configurations can be executed again through the same application path.
+Implemented recording/upload and execution capability; success rate is not supplied.
+
+Centralized result discovery
+Run records and report routes keep test execution and result review in one management application.
+Supported by models and routes; no measured regression reduction or time saving is claimed.
+
+ARCHITECTURE BOUNDARIES
+
+The reviewed recording service launches a code-generation process, but the supplied evidence does not include a successful end-to-end recording validation for every runtime configuration.
+
+The executor uses a shared HTML report directory. The source does not establish isolated report storage for concurrent test runs.
+
+The database includes a scheduling model, but that alone does not demonstrate a functioning recurring scheduler in the reviewed server path.
+
+This is a description of the implementation, not a security certification or proof of production readiness. Targets, recorded journeys, credentials, and actual reports remain private.
+
+SOURCE BASIS
+Resume: synthetic monitoring and reduced manual triage effort. Implementation review: Express routes, recording/execution services, SQLite models, child-process execution, and report handling.

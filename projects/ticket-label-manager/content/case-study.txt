@@ -1,7 +1,73 @@
-Ticket Label Manager
+Ticket Label Governance
 
-Tickets can be inconsistent when required labels depend on the type of work or its current status.
+WHY IT STARTED
 
-Make requirements explicit and recompute validation after each edit. Bulk repair applies only to selected tickets.
+Incident and problem records need enough classification to support investigation, follow-up, and reporting. A flat checklist is insufficient when a requirement depends on whether the record is an incident, a problem, or already closed.
 
-This is an in-memory browser demonstration. It does not connect to Jira, identify actual reporters, modify real tickets, or persist changes after reload.
+The implementation addresses the repetitive work of opening individual tickets, checking which requirements apply, identifying missing labels, and making updates. It also addresses the consistency problem: two engineers can apply the same policy differently if the conditions live only in documentation.
+
+I built a centralized review screen backed by a configurable rules model. It retrieves a scoped issue set, highlights missing requirements, and makes the relevant changes available from the same view. This case study describes the implemented workflow rather than claiming an unmeasured reduction in ticket errors.
+
+WHAT CHANGED
+
+The review task is distributed across individual issue pages and a separate understanding of policy. Parent/child and closure conditions must be remembered while checking each ticket.
+
+The server evaluates active rule groups for each fetched ticket and returns missing-group information to the browser. Operators can review and update tickets individually or apply a selected bulk change.
+
+IMPLEMENTATION DECISIONS
+
+Represent policy as conditional groups
+The rule model supports mandatory groups and conditions based on status or a parent label. Requirements can therefore change with the issue context rather than applying every label to every record.
+
+Keep review and remediation together
+The browser displays validation state alongside the issues. Per-ticket add/remove operations and selected-ticket bulk updates reduce navigation between a review list and individual issue screens.
+
+Keep the Jira connection on the server
+Flask performs authenticated Jira REST requests and returns simplified issue information. The public case study shows this service boundary without exposing the original organization, policy labels, or credentials.
+
+Return per-ticket bulk results
+The bulk route processes selected ticket keys and reports individual success or failure. It is a series of REST updates, not an atomic transaction across all tickets.
+
+HOW IT WORKS
+
+Choose the review scope
+The UI supplies a reporter and optional filters. The backend constructs a scoped Jira query and requests the fields needed for review.
+
+Retrieve and normalize issues
+The Jira client fetches issues and converts fields into a smaller response containing ticket metadata, current labels, and status.
+
+Evaluate active policy groups
+The validator checks status conditions and parent-label conditions. An active mandatory group is missing when none of its allowed labels is present.
+
+Present the reason for a gap
+The API returns missing groups, active groups, and an overall mandatory-label state. The browser uses those values to make incomplete records visible.
+
+Apply explicit updates
+An operator chooses labels or a selected-ticket bulk action. Flask sends label additions/removals to Jira, reports results, and the issue set can be fetched again to confirm current state.
+
+OUTCOMES
+
+Centralized policy evaluation
+Conditional requirements are evaluated by one shared server-side function rather than only being a manual checklist.
+Directly supported by the rule-validation implementation.
+
+Reduced repetitive navigation by design
+Selected issues can be reviewed and updated from one application, with per-ticket and bulk operations.
+Workflow reduction supported by the UI/API; no time-saving study supplied.
+
+Visible remediation gaps
+The response identifies which active mandatory groups are missing instead of exposing only a red/green summary.
+Implemented capability; no measured improvement in compliance or incident resolution is claimed.
+
+ARCHITECTURE BOUNDARIES
+
+The reviewed query requests a bounded result set and does not demonstrate complete pagination. It should not be described as an exhaustive audit of every issue.
+
+The validator checks that at least one allowed label exists in a required group. It is not evidence that the backend enforces mutual exclusivity for every radio-style group.
+
+Bulk updates can partially succeed. The case study does not claim transactionality or automatic rollback of completed Jira writes.
+
+The resume supports broader ITSM automation experience, but does not supply a measured result for this specific application.
+
+SOURCE BASIS
+Resume: ITSM automation and incident-management context. Implementation review: Flask routes, conditional validator, Jira issue search, per-ticket updates, and bulk-update loop.

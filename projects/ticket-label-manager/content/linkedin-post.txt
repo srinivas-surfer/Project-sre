@@ -1,19 +1,22 @@
-DRAFT — insert the verified deployment URL before posting.
+DRAFT — review before posting.
 
-I built a public Ticket Label Manager demonstration to explore a practical engineering question.
+Ticket Label Governance
 
-Tickets can be inconsistent when required labels depend on the type of work or its current status.
+The implementation addresses the repetitive work of opening individual tickets, checking which requirements apply, identifying missing labels, and making updates. It also addresses the consistency problem: two engineers can apply the same policy differently if the conditions live only in documentation.
 
-The demo includes:
-- Conditional incident and problem rules
-- Closure labels for resolved tickets
-- Editable ticket classifications
-- Selected-ticket bulk repair
+The implementation:
+• Choose the review scope
+• Retrieve and normalize issues
+• Evaluate active policy groups
+• Present the reason for a gap
+• Apply explicit updates
 
-Make requirements explicit and recompute validation after each edit. Bulk repair applies only to selected tickets.
+What changed:
+Conditional requirements are evaluated by one shared server-side function rather than only being a manual checklist.
+Directly supported by the rule-validation implementation.
 
-All data and examples are fictional; no client systems or records are used.
+Full case study and architecture: https://srinivas-surfer.github.io/Project-sre/projects/ticket-label-manager/case-study.html
 
-Try it: [VERIFIED URL]
+Client identities and operational data are omitted. No measured reduction figures are claimed beyond the supplied resume.
 
 #SiteReliabilityEngineering #DevOps #Observability

@@ -1,19 +1,22 @@
-DRAFT — insert the verified deployment URL before posting.
+DRAFT — review before posting.
 
-I built a public Browser Automation Showcase demonstration to explore a practical engineering question.
+Browser Test Management
 
-A passing page-load check does not establish that a user can complete a journey.
+This project addresses the workflow around those checks. Engineers need a place to manage test definitions, record or upload steps, run the checks, and find the resulting report instead of relying on disconnected scripts and manually collected screenshots.
 
-The demo includes:
-- Functional sample cart
-- Quantity and shipping controls
-- Checkout validation
-- Four browser smoke checks
+The implementation:
+• Authenticate and choose a test workflow
+• Prepare the test definition
+• Start an execution record
+• Run the actual browser automation
+• Make the outcome reviewable
 
-Test meaningful transitions: add an item, change quantity, enforce checkout prerequisites, and confirm a fictional order.
+What changed:
+The resume explicitly links synthetic monitoring and consolidated observability with less manual work and more efficient incident triage.
+Resume-level outcome; not a quantified result attributed solely to this test manager.
 
-All data and examples are fictional; no client systems or records are used.
+Full case study and architecture: https://srinivas-surfer.github.io/Project-sre/projects/browser-automation/case-study.html
 
-Try it: [VERIFIED URL]
+Client identities and operational data are omitted. No measured reduction figures are claimed beyond the supplied resume.
 
 #SiteReliabilityEngineering #DevOps #Observability

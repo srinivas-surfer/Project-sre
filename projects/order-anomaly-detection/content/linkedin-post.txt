@@ -1,19 +1,22 @@
-DRAFT — insert the verified deployment URL before posting.
+DRAFT — review before posting.
 
-I built a public Order Anomaly Detection demonstration to explore a practical engineering question.
+Order Anomaly Detection
 
-Order counts naturally vary. A useful signal must explain why a change deserves investigation without treating every fluctuation as a failure.
+The problem addressed by this implementation was the repeated comparison of the latest order figures with historical behavior across multiple reporting entities. Reviewing each observation individually makes detection dependent on when an engineer looks and how consistently that engineer interprets normal variation.
 
-The demo includes:
-- Three synthetic traffic scenarios
-- Adjustable Z-score threshold
-- Hourly chart and alert table
-- CSV export of the current analysis
+The implementation:
+• Load and validate the input
+• Derive and standardize features
+• Evaluate multiple anomaly signals
+• Rank and explain candidates
+• Deliver and retain the result
 
-Expose the baseline, standard deviation, and threshold alongside the result so visitors can understand every decision.
+What changed:
+The resume explicitly attributes reduced MTTD to the ML-assisted order-flow detector, automated alerts, and reporting.
+Resume-reported outcome; no reduction percentage or baseline supplied.
 
-All data and examples are fictional; no client systems or records are used.
+Full case study and architecture: https://srinivas-surfer.github.io/Project-sre/projects/order-anomaly-detection/case-study.html
 
-Try it: [VERIFIED URL]
+Client identities and operational data are omitted. No measured reduction figures are claimed beyond the supplied resume.
 
 #SiteReliabilityEngineering #DevOps #Observability

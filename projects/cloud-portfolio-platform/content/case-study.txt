@@ -1,0 +1,73 @@
+Cloud Portfolio Platform
+
+WHY IT STARTED
+
+A portfolio is a useful place to practice the whole delivery lifecycle: building an artifact, releasing a change, validating the result, and returning to a known version when needed. A site being reachable is only one part of that engineering problem.
+
+The project’s documented design separates four static services from a contact API and gives each service its own delivery pipeline. That separation addresses a concrete operational aim: change one service without treating the entire platform as a single indivisible release.
+
+I used the platform to implement traceable container releases, deliberate approval points, retained rollback information, and a daily operational report. The resume reports independent no-downtime service deployment; it does not provide an availability study or measured deployment-time reduction.
+
+WHAT CHANGED
+
+The operating problem is how to make a small web platform repeatably deployable and recoverable, rather than relying on an undocumented change process or a mutable image tag.
+
+Each service has a pipeline with build/deploy approvals, image versions linked to source revisions, persisted release history, and a workflow for restoring the previous verified image. A daily report summarizes operational readiness.
+
+IMPLEMENTATION DECISIONS
+
+Separate content services from the contact API
+The resume identifies four Nginx-based static services and a Node.js/Express contact API. The split allows the service-level pipeline and release history to be associated with a specific deployable component.
+
+Version images by source revision
+Git-SHA image tagging links the deployed artifact to a source revision. This provides a more explicit release identity than a mutable label alone.
+
+Make rollback a workflow
+The documented N-1 process keeps the previous verified image tag and restores it through a manual workflow. Recovery is a planned operation with recorded release state.
+
+Review readiness continuously
+The daily HTML report covers health, infrastructure/security information, route performance, and deployment/rollback readiness, then sends that summary through Amazon SES SMTP.
+
+HOW IT WORKS
+
+Resolve and deliver public traffic
+Route 53 and CloudFront provide public delivery in the resume’s architecture. The exact origin mapping, DNS records, and compute host are not specified.
+
+Serve independently packaged components
+Four Nginx-based static services provide the site content and a Node.js/Express service handles the contact API. They are containerized deployable units.
+
+Build and approve a release
+A per-service GitHub Actions pipeline uses manual build and deploy approval gates. Docker Hub retains image versions tagged by Git SHA.
+
+Deploy with release history
+The service deployment records version information locally so the current and previous verified image are available to the operational workflow.
+
+Recover and report
+The manual rollback workflow restores the previous verified image for a selected service. Separately, a scheduled daily report summarizes operational health/readiness and is emailed through Amazon SES SMTP.
+
+OUTCOMES
+
+Independent service releases
+The resume reports independent no-downtime deployment for each service.
+Resume-reported result; the underlying deployment strategy and measured downtime record were not supplied.
+
+Explicit rollback readiness
+The resume describes an N-1 rollback workflow backed by persisted local release history.
+Resume-documented capability; recovery duration is not quantified.
+
+Automated operational reporting
+A daily HTML operations report is generated and delivered through Amazon SES SMTP.
+Resume-documented automation; no measured reduction in review time is claimed.
+
+ARCHITECTURE BOUNDARIES
+
+This case study is based on the personal-project section of the resume rather than inspected source. It does not identify an ECS, Kubernetes, EC2, or other compute target that the resume does not specify.
+
+CloudFront routing, contact storage, image scanning tools, TLS configuration, and the mechanism that achieves no-downtime release are not specified in the supplied evidence.
+
+The resume describes approximate page-view analytics; the case study does not present them as verified audience or business-impact figures.
+
+This original cloud platform and the current GitHub Pages case-study site are different deployments. Hosting this case study on Pages does not deploy the containerized platform.
+
+SOURCE BASIS
+Supplied resume, Personal Projects: Cloud Portfolio Platform. Architecture is limited to explicitly described components and relationships; original platform source was not reviewed.

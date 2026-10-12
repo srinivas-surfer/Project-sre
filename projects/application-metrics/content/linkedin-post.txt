@@ -1,19 +1,22 @@
-DRAFT — insert the verified deployment URL before posting.
+DRAFT — review before posting.
 
-I built a public Application Metrics Explorer demonstration to explore a practical engineering question.
+Peak Traffic Metrics Collector
 
-A last-value card alone can hide a growing trend or a brief spike. Different measurement types also require different aggregation rules.
+The project addresses repetitive discovery and aggregation work: locating the relevant entity/index combination, selecting the same review window, running several interval queries, and assembling results for comparison.
 
-The demo includes:
-- Three fictional services
-- CPU, memory, and error-rate views
-- Adjustable threshold
-- Sample table and CSV export
+The implementation:
+• Accept and normalize the review window
+• Discover the collection scope
+• Run interval/service combinations
+• Calculate the peak in OpenSearch
+• Consolidate and export
 
-Show the chart, last value, peak, and a clearly defined window average together; use request-weighted error rates.
+What changed:
+Discovery and nested collection loops replace repeated manual setup for each entity, service, and interval.
+Implemented automation; no measured engineering-hours saving supplied.
 
-All data and examples are fictional; no client systems or records are used.
+Full case study and architecture: https://srinivas-surfer.github.io/Project-sre/projects/application-metrics/case-study.html
 
-Try it: [VERIFIED URL]
+Client identities and operational data are omitted. No measured reduction figures are claimed beyond the supplied resume.
 
 #SiteReliabilityEngineering #DevOps #Observability

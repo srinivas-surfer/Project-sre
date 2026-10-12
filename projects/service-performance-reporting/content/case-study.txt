@@ -1,7 +1,73 @@
 Service Performance Reporting
 
-A dashboard becomes misleading when its charts silently use different populations or time windows.
+WHY IT STARTED
 
-Calculate every card and endpoint row from the same filtered record set, with metric definitions visible.
+An event review needs more than a single availability number. Engineers need to explain traffic volume, slow requests, failing endpoints, and differences between application channels over the same operational window.
 
-No OpenSearch or production logs are queried. Every value comes from generated records. Percentiles use the nearest-rank definition, and all records have an HTTP status.
+The task addressed by this project was repeatedly assembling that evidence from log searches and individual views. The difficulty is not simply running a query: time zones, field mappings, filters, and denominators must be consistent enough for the report to be interpreted correctly.
+
+I implemented a reusable report pipeline with a web entry point and a command-line path. The design produces a downloadable artifact for review and handover, while retaining query context and reporting errors when parts of the analysis cannot be completed.
+
+WHAT CHANGED
+
+Preparing a review means choosing a time range, executing several searches, comparing channels and endpoints, and assembling the result for another reader. Inconsistent filters or report windows can make comparisons difficult.
+
+A selected time window drives a defined query suite. The results are assembled into a generated HTML report with traffic, latency, return-code, endpoint, and application-error sections.
+
+IMPLEMENTATION DECISIONS
+
+Use a reusable report artifact
+A rendered HTML file can be viewed or downloaded after the query work completes. This supports a repeatable operational review without requiring the recipient to reproduce every search.
+
+Move generation out of the form response
+The Flask UI starts a background thread and exposes a job-status endpoint. The user can see progress while the report is being generated rather than holding the initial form request open.
+
+Handle differences in log mappings
+The report code inspects mappings and tests suitable field/filter approaches. This is practical adaptation to the available schema, not a claim that all source logs are normalized.
+
+Make failed query sections visible
+Query wrappers collect failures while allowing other sections to render. A partial report still needs its error indicators interpreted; missing results are not evidence of healthy behavior.
+
+HOW IT WORKS
+
+Normalize the review window
+The web form or CLI supplies a time range. Time-zone handling converts the query bounds while preserving a selected display time zone in the report.
+
+Start the reporting job
+The Flask path assigns a job identifier and launches report generation in a background thread. Job state is held in process memory and polled by the loading page.
+
+Query through the search adapter
+A requests-based client calls the dashboards internal OpenSearch search endpoint. It unwraps responses and includes timeout and retry handling.
+
+Build the analysis sections
+The query suite collects totals, response-time statistics, return-code distributions, time histograms, top/error endpoints, and channel-specific sections. Search-side percentile aggregations supply P90 values.
+
+Render and serve the report
+Jinja2 combines the aggregates, query metadata, and any errors into an HTML file. Flask lists generated reports and provides view/download routes; the CLI can also generate an artifact directly.
+
+OUTCOMES
+
+Less repeated query and report assembly
+A single generation path runs the defined analysis suite and renders the review artifact.
+Implemented automation; elapsed preparation time was not supplied.
+
+Consistent reporting structure
+Repeated reviews use the same section layout and query-building functions rather than being assembled independently each time.
+Supported by the query/render pipeline; this does not prove identical log coverage across channels.
+
+Clearer investigation evidence
+Traffic, latency, status-code, and endpoint views are available together for operational review.
+Capability supported by source. The resume’s broader dashboard achievements are not assigned to this tool.
+
+ARCHITECTURE BOUNDARIES
+
+The web job registry is in memory and the worker is a thread, not a durable external queue. A process restart can lose job-status information.
+
+The reviewed job path temporarily changes a shared display-time-zone setting. Concurrent jobs need isolation or serialization before describing this as a multi-user report service.
+
+The dashboards internal search interface is an integration dependency; it should not be presented as a stable, vendor-neutral reporting API.
+
+Different report sections can have different eligible populations. Response-code percentages and all matching log counts need their definitions kept visible; the case study does not equate every matching document with one valid HTTP request.
+
+SOURCE BASIS
+Resume: observability, performance investigation, and event-readiness context. Implementation review: Flask background job, dashboards search client, query suite, and Jinja2 report rendering.

@@ -1,38 +1,38 @@
-# Srinivas Pitchubabu — SRE portfolio
+# Srinivas Pitchubabu — engineering case studies
 
-Portfolio, public resume, and six independently authored browser demonstrations.
+Portfolio, public resume, seven detailed engineering case studies, and original architecture diagrams. The case-study collection replaces the earlier synthetic browser demonstrations.
 
-## Hosting
+## What each project includes
 
-Uses the existing `srinivas-surfer/Project-sre` repository. GitHub Pages was configured to publish from the `main` branch root; the successful built-in Pages run confirmed that configuration. The redundant custom deployment workflow was removed to avoid competing deployments. Keep Settings → Pages → Deploy from a branch → main → /(root).
+- Overview: operating context and the implemented change.
+- Case study: why it started, the problem, design decisions, execution, and outcomes.
+- Architecture: source-informed component diagram, responsibilities, processing sequence, and boundaries.
+- Outcomes: resume-reported effects separated from implemented capabilities and unmeasured benefits.
+- `images/`: original architecture SVG and LinkedIn cards.
+- `content/`: full narrative, post draft, carousel copy, and alt text.
 
-Expected public URL: https://srinivas-surfer.github.io/Project-sre/.
+The old `demo.html` routes redirect to the case studies. Demo scripts, sample stores, synthetic charts, and smoke-test runners are removed from the public collection.
 
-## Projects
+## Evidence
 
-- Order Anomaly Detection: synthetic hourly counts and transparent Z-score thresholds.
-- Ticket Label Manager: fictional ticket rules, editing, and bulk repair.
-- Service Performance Reporting: generated request records, channel filters, P90, and export.
-- Browser Automation Showcase: fictional storefront, DOM smoke checks, and a local Playwright example.
-- Observability Command Center: scripted incidents, service filters, and evidence inspection.
-- Application Metrics Explorer: synthetic gauges, request-weighted error rates, and export.
+Six architectures were reconstructed from reviewed local implementation. Peak Traffic Metrics Collector correctly describes the OpenSearch histogram/max-bucket collector, not CPU/memory gauges. Cloud Portfolio Platform is explicitly resume-based; its compute target and undocumented deployment internals are not invented.
 
-Each project has Overview, Demo, Architecture, and Case Study pages under `projects/<slug>/`. The standalone sibling folders outside this repository are independently publishable local Git repositories. They are not yet separate repositories on GitHub; this portfolio embeds their public site files so every demo works under the existing hosting address.
+The resume supports reduced MTTD through order-flow anomaly detection, reduced manual effort through broader observability/synthetic-monitoring work, independent no-downtime service deployments, and N-1 rollback readiness. No before/after percentages, incident counts, time savings, or financial figures were supplied; none are fabricated.
 
-TechOps is excluded from this portfolio at the owner's request; its existing separate local folder is retained. Infrastructure assessment material is not included.
-
-## Preview
-
-Open `index.html`, or run `python3 -m http.server 8000` in this directory. The static sites require no dependencies.
-
-## Content and assets
-
-Each project contains `images/linkedin/` with four original SVG cards and PNG exports, plus `content/` with case-study text, carousel copy, image alt text, and a LinkedIn draft. Drafts require the verified live URL before posting. Nothing is posted to LinkedIn automatically. All committed files are public and may be served by branch-based Pages hosting.
+Problem statements describe the operational need addressed by each tool. They do not invent a specific outage, date, customer, or incident that supposedly triggered the project.
 
 ## Public content boundary
 
-All demo code, input data, illustrations and exercises were newly authored. No original operational source, client identifiers, credentials, production exports, screenshots, raw resume PDF, or private Git histories were imported. Demo limitations are explicitly described on each project page. No client performance or impact figures are claimed.
+All narrative and diagrams are newly authored. No original client application code, names, hostnames, real ticket identifiers, configuration, credentials, operational exports, raw resume PDF, or private source history is copied into this repository. Component diagrams generalize environment identity while preserving documented technologies and responsibilities.
 
-## Validation
+## Hosting
 
-All six interaction flows were checked in a real headless browser, including thresholds, CSV downloads, selected-ticket repairs, report aggregation, cart checkout, scenario inspection, and metric weighting. All 24 project pages were checked at a mobile viewport. Local links and the deployment package are validated before publication.
+Uses the existing `srinivas-surfer/Project-sre` repository and GitHub Pages publishing from `main` at the repository root. Push the committed update through GitHub Desktop. No custom deployment workflow is required for the active branch-based hosting configuration.
+
+Public address: https://srinivas-surfer.github.io/Project-sre/.
+
+Standalone sibling repositories are maintained locally. They have not been published individually on GitHub. TechOps remains excluded.
+
+## Preview
+
+Open `index.html` or serve this directory with `python3 -m http.server 8000`. The publication is static and requires no browser-side application code or backend.

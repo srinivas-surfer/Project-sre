@@ -1,19 +1,22 @@
-DRAFT — insert the verified deployment URL before posting.
+DRAFT — review before posting.
 
-I built a public Service Performance Reporting demonstration to explore a practical engineering question.
+Service Performance Reporting
 
-A dashboard becomes misleading when its charts silently use different populations or time windows.
+The task addressed by this project was repeatedly assembling that evidence from log searches and individual views. The difficulty is not simply running a query: time zones, field mappings, filters, and denominators must be consistent enough for the report to be interpreted correctly.
 
-The demo includes:
-- Web and mobile filters
-- Selectable time windows
-- Nearest-rank P90 latency
-- Endpoint breakdown and CSV export
+The implementation:
+• Normalize the review window
+• Start the reporting job
+• Query through the search adapter
+• Build the analysis sections
+• Render and serve the report
 
-Calculate every card and endpoint row from the same filtered record set, with metric definitions visible.
+What changed:
+A single generation path runs the defined analysis suite and renders the review artifact.
+Implemented automation; elapsed preparation time was not supplied.
 
-All data and examples are fictional; no client systems or records are used.
+Full case study and architecture: https://srinivas-surfer.github.io/Project-sre/projects/service-performance-reporting/case-study.html
 
-Try it: [VERIFIED URL]
+Client identities and operational data are omitted. No measured reduction figures are claimed beyond the supplied resume.
 
 #SiteReliabilityEngineering #DevOps #Observability

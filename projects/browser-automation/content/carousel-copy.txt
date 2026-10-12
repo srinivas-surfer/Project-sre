@@ -1,15 +1,15 @@
-1. THE PROJECT
-Browser Automation Showcase
-A public browser demonstration
+1. The engineering story
+Browser Test Management
+A Node.js and Express test-management application that organizes Playwright recording, test execution, stored configurations, and HTML results.
 
-2. THE QUESTION
-Journey checks
-A passing page-load check does not establish that a user can complete a journey.
+2. Why I implemented it
+The operational problem
+A recurring browser check requires an engineer to repeat the journey, track what was tested, and retain the result. Script execution and report discovery can remain separate tasks even after the first test is automated.
 
-3. THE APPROACH
-Make the decision visible.
-Test meaningful transitions: add an item, change quantity, enforce checkout prerequisites, and confirm a fictional order.
+3. How it works
+From input to outcome
+Authenticate and choose a test workflow → Prepare the test definition → Start an execution record
 
-4. TRY IT
-Explore the working demo.
-Run the checks, then manually add products and choose shipping. Confirm that checkout requires the demo agreement.
+4. What changed
+Repeatable journey checks
+Managed definitions, execution, and reviewable results.

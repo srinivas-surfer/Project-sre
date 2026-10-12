@@ -1,15 +1,15 @@
-1. THE PROJECT
+1. The engineering story
 Order Anomaly Detection
-A public browser demonstration
+A Python analysis pipeline that combines statistical features, three unsupervised models, severity scoring, and automated operational reporting.
 
-2. THE QUESTION
-Order signals
-Order counts naturally vary. A useful signal must explain why a change deserves investigation without treating every fluctuation as a failure.
+2. Why I implemented it
+The operational problem
+The operational task requires collecting counts, comparing them with expected behavior, deciding which deviations matter, and preparing an explanation for the team. Without a consolidated pipeline, those are separate review and communication steps.
 
-3. THE APPROACH
-Make the decision visible.
-Expose the baseline, standard deviation, and threshold alongside the result so visitors can understand every decision.
+3. How it works
+From input to outcome
+Load and validate the input → Derive and standardize features → Evaluate multiple anomaly signals
 
-4. TRY IT
-Explore the working demo.
-Compare a normal day with a sudden drop. Raise the threshold and observe which alerts disappear.
+4. What changed
+Reduced MTTD
+Reported in the resume; no percentage supplied.

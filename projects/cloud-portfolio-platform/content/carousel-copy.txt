@@ -1,0 +1,15 @@
+1. The engineering story
+Cloud Portfolio Platform
+A resume-documented containerized portfolio with independently delivered services, explicit release approvals, rollback history, and automated operational reporting.
+
+2. Why I implemented it
+The operational problem
+The operating problem is how to make a small web platform repeatably deployable and recoverable, rather than relying on an undocumented change process or a mutable image tag.
+
+3. How it works
+From input to outcome
+Resolve and deliver public traffic → Serve independently packaged components → Build and approve a release
+
+4. What changed
+N-1 rollback readiness
+Previous verified images and per-service release history.

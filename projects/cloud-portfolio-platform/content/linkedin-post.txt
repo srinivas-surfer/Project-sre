@@ -1,0 +1,22 @@
+DRAFT — review before posting.
+
+Cloud Portfolio Platform
+
+The project’s documented design separates four static services from a contact API and gives each service its own delivery pipeline. That separation addresses a concrete operational aim: change one service without treating the entire platform as a single indivisible release.
+
+The implementation:
+• Resolve and deliver public traffic
+• Serve independently packaged components
+• Build and approve a release
+• Deploy with release history
+• Recover and report
+
+What changed:
+The resume reports independent no-downtime deployment for each service.
+Resume-reported result; the underlying deployment strategy and measured downtime record were not supplied.
+
+Full case study and architecture: https://srinivas-surfer.github.io/Project-sre/projects/cloud-portfolio-platform/case-study.html
+
+Client identities and operational data are omitted. No measured reduction figures are claimed beyond the supplied resume.
+
+#SiteReliabilityEngineering #DevOps #Observability

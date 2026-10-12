@@ -1,7 +1,76 @@
 Observability Command Center
 
-Operators need a concise way to relate user symptoms to dependency changes without confusing coincidence with causation.
+WHY IT STARTED
 
-Show timestamps, affected services, and a hypothesis together while making the evidence limits explicit.
+An investigation often starts with a symptom in one tool and supporting evidence in another. Engineers then have to align time windows, affected services, baseline behavior, and collection status before deciding where to investigate next.
 
-Signals and timelines are scripted teaching examples, not live telemetry. Correlation is an illustrative hypothesis, not an automated root-cause finding. No operational actions are available.
+The command center addresses two connected problems: fragmented operational context and the reliability of the collection workflow itself. A dashboard is less useful if its collectors block each other, duplicate work, or fail without making the failure visible.
+
+I structured the system around a control API, scheduled jobs, bounded worker pools, and persisted state. This separates the operator experience from collection work and makes queues, retries, execution history, and evidence part of the operational model.
+
+WHAT CHANGED
+
+The investigation task spans multiple tools and independent collection steps. An operator needs to reconcile the evidence manually and determine whether a missing signal reflects healthy behavior or a failed collection.
+
+The control plane registers environments and execution state; scheduled or requested jobs flow through tool-specific queues; workers collect and evaluate signals; correlation and exception analysis provide evidence for a combined investigation view.
+
+IMPLEMENTATION DECISIONS
+
+Separate the UI from collector execution
+Nginx serves the browser interface and proxies API traffic. FastAPI handles control-plane requests while worker containers execute the collection workload.
+
+Use durable queues and bounded workers
+Redis holds ready/processing/retry/dead-letter state and leases. Per-tool workers make collection behavior observable and prevent one long-running integration from occupying the entire control process.
+
+Keep control state and monitoring history distinct
+PostgreSQL stores control-plane records, including cluster/agent and job information. SQLite retains monitoring history, baselines, alerts, and related local state. These are separate storage responsibilities.
+
+Correlate after collector completion
+The queue layer tracks pending collectors in a cycle and releases dependent correlation work when the cycle reaches terminal collector states. Terminal completion can include failure, so missing evidence must remain visible.
+
+Treat correlation as a hypothesis
+Time-window and contextual matching helps identify related observations. The result supports root-cause investigation; it does not prove causation merely because two signals occurred together.
+
+HOW IT WORKS
+
+Register and select the environment
+The control plane loads cluster and agent configuration and uses stored connector credentials at execution time. The public architecture abstracts those environment identities.
+
+Schedule bounded collection cycles
+A scheduler rotates across enabled environments and enqueues tool-specific work. The code includes an active-cycle guard and independent exception-scan jobs.
+
+Claim and execute jobs
+Workers claim jobs, maintain heartbeats and leases, run the appropriate collector, and record lifecycle results. Failures enter bounded retry logic and can reach a dead-letter queue.
+
+Evaluate and persist monitoring evidence
+Collectors gather metrics, problems, request/error information, or inventory as supported by their integration. Baseline logic evaluates current measurements and writes monitoring history and alerts.
+
+Correlate and inspect
+Dependent correlation work combines relevant signals, while exception analysis evaluates its own completed time buckets. The operator reviews both findings and collection health through the API-backed UI.
+
+OUTCOMES
+
+Less fragmented investigation by design
+A shared control plane and UI connect collection state, service observations, baselines, and correlation evidence.
+Implemented architecture; no measured tool-switch count or MTTR reduction supplied.
+
+Visible collection failure and recovery
+Leases, heartbeats, retries, and dead-letter state provide an explicit lifecycle for work that would otherwise be opaque.
+Supported by scheduler/worker/queue source; operational reliability was not benchmarked here.
+
+Reduced manual triage in the broader observability work
+The resume reports streamlined triage and reduced manual effort through consolidated monitoring and synthetic checks.
+Resume-level result; not assigned as a measured effect of this repository alone.
+
+ARCHITECTURE BOUNDARIES
+
+The current architecture is a Docker Compose deployment with local stateful volumes. The reviewed files do not establish a highly available distributed production deployment.
+
+The README explicitly says the Grafana connector remains disabled pending configuration. A cronjob worker pool exists, but the inspected execution path returns a not-implemented result for that collector; neither is shown as a functioning live collector here.
+
+An isolated assistant service and read-only learning/showcase services are present as supporting components. They are separate from the core monitoring and correlation path.
+
+Correlation depends on source coverage and collector success. A terminal cycle does not mean every upstream query produced complete evidence.
+
+SOURCE BASIS
+Resume: one-view observability and reduced manual triage. Implementation review: Compose service boundaries, scheduler, queue runtime, worker dispatch, baseline detector, and correlation engine.

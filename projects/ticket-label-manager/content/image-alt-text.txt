@@ -1,4 +1,4 @@
-Slide 1: THE PROJECT. Ticket Label Manager A public browser demonstration
-Slide 2: THE QUESTION. Ticket quality Tickets can be inconsistent when required labels depend on the type of work or its current status.
-Slide 3: THE APPROACH. Make the decision visible. Make requirements explicit and recompute validation after each edit. Bulk repair applies only to selected tickets.
-Slide 4: TRY IT. Explore the working demo. Select two incomplete tickets and repair them. Change a ticket from incident to problem and inspect the new required category.
+Slide 1: The engineering story. Ticket Label Governance. A Flask application that retrieves Jira issues, evaluates conditional label requirements, and supports individual and selected-ticket updates.
+Slide 2: Why I implemented it. The operational problem. The review task is distributed across individual issue pages and a separate understanding of policy. Parent/child and closure conditions must be remembered while checking each ticket.
+Slide 3: How it works. From input to outcome. Choose the review scope → Retrieve and normalize issues → Evaluate active policy groups
+Slide 4: What changed. One review workflow. Rule evaluation, visible gaps, and selected-ticket updates.
